@@ -13,12 +13,26 @@ def drawFiveCircles(turt,radius,centerX,centerY):
         turt.left(72)
 
 def drawCenterCircles(turt,centerX, centerY):
+    """This function draws the smaller cicles on each flower"""
     turt.up()
     turt.goto(centerX, centerY)
     turt.down()
     turt.begin_fill()
     turt.circle(15)
     turt.end_fill()
+
+def drawBee(turt, centerX, centerY):
+    """This function places the stamp in the middle of each flower"""
+    turt.up()
+    turt.goto(centerX, centerY)
+    stampTurtle.down()
+    stampTurtle.stamp()
+
+def drawflower(sepalTurtle,petalTurtle,centerTurtle,stampTurtle, centerX, centerY):
+    drawFiveCircles(sepalTurtle, 50, centerX, centerY)
+    drawFiveCircles(petalTurtle, 25, centerX, centerY)
+    drawCenterCircles(centerTurtle, centerX, centerY-15)
+    drawBee(stampTurtle, centerX-2, centerY)
 
 
 win = turtle.Screen()
@@ -45,60 +59,14 @@ stampTurtle.speed(0)
 stampTurtle.shape("turtle")
 stampTurtle.hideturtle()
 
-drawFiveCircles(sepalTurtle,50, 0,0)
+drawflower(sepalTurtle,petalTurtle,centerTurtle,stampTurtle, 0, 0)
 
-drawFiveCircles(petalTurtle,25,0,0)
+drawflower(sepalTurtle,petalTurtle,centerTurtle,stampTurtle,0,220)
 
-drawCenterCircles(centerTurtle,0,-15)
+drawflower(sepalTurtle,petalTurtle,centerTurtle,stampTurtle,220,0)
 
-stampTurtle.up()
-stampTurtle.goto(-2,0)
-stampTurtle.down()
-stampTurtle.stamp()
+drawflower(sepalTurtle,petalTurtle,centerTurtle, stampTurtle,0,-220)
 
-drawFiveCircles(sepalTurtle,50,0,220)
-
-drawFiveCircles(petalTurtle,25,0,220)
-
-drawCenterCircles(centerTurtle,0,205)
-
-stampTurtle.up()
-stampTurtle.goto(-2,220)
-stampTurtle.down()
-stampTurtle.stamp()
-
-drawFiveCircles(sepalTurtle,50,220,0)
-
-drawFiveCircles(petalTurtle,25,220,0)
-
-drawCenterCircles(centerTurtle,220,-15)
-
-stampTurtle.up()
-stampTurtle.goto(218,0)
-stampTurtle.down()
-stampTurtle.stamp()
-
-drawFiveCircles(sepalTurtle,50,0,-220)
-
-drawFiveCircles(petalTurtle,25,0,-220)
-
-drawCenterCircles(centerTurtle,0,-235)
-
-stampTurtle.up()
-stampTurtle.goto(-2,-220)
-stampTurtle.down()
-stampTurtle.stamp()
-
-drawFiveCircles(sepalTurtle,50,-220,0)
-
-
-drawFiveCircles(petalTurtle,25,-220,0)
-
-drawCenterCircles(centerTurtle,-220,-15)
-
-stampTurtle.up()
-stampTurtle.goto(-222,0)
-stampTurtle.down()
-stampTurtle.stamp()
+drawflower(sepalTurtle,petalTurtle,centerTurtle,stampTurtle,-220,0)
 
 win.exitonclick()

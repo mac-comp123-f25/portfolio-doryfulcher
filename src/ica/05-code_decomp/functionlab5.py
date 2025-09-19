@@ -20,6 +20,12 @@ def drawCenterCircles(turt,centerX, centerY):
     turt.circle(15)
     turt.end_fill()
 
+def drawBee(turt, centerX, centerY):
+    turt.up()
+    turt.goto(centerX, centerY)
+    stampTurtle.down()
+    stampTurtle.stamp()
+
 
 win = turtle.Screen()
 win.bgcolor("light sky blue")
@@ -51,10 +57,7 @@ drawFiveCircles(petalTurtle,25,0,0)
 
 drawCenterCircles(centerTurtle,0,-15)
 
-stampTurtle.up()
-stampTurtle.goto(-2,0)
-stampTurtle.down()
-stampTurtle.stamp()
+drawBee(stampTurtle, -2, 0)
 
 drawFiveCircles(sepalTurtle,50,0,220)
 
@@ -62,10 +65,7 @@ drawFiveCircles(petalTurtle,25,0,220)
 
 drawCenterCircles(centerTurtle,0,205)
 
-stampTurtle.up()
-stampTurtle.goto(-2,220)
-stampTurtle.down()
-stampTurtle.stamp()
+drawBee(stampTurtle, -2, 220)
 
 drawFiveCircles(sepalTurtle,50,220,0)
 
@@ -73,10 +73,7 @@ drawFiveCircles(petalTurtle,25,220,0)
 
 drawCenterCircles(centerTurtle,220,-15)
 
-stampTurtle.up()
-stampTurtle.goto(218,0)
-stampTurtle.down()
-stampTurtle.stamp()
+drawBee(stampTurtle, 218, 0)
 
 drawFiveCircles(sepalTurtle,50,0,-220)
 
@@ -84,10 +81,7 @@ drawFiveCircles(petalTurtle,25,0,-220)
 
 drawCenterCircles(centerTurtle,0,-235)
 
-stampTurtle.up()
-stampTurtle.goto(-2,-220)
-stampTurtle.down()
-stampTurtle.stamp()
+drawBee(stampTurtle, -2, -220)
 
 drawFiveCircles(sepalTurtle,50,-220,0)
 
@@ -96,9 +90,6 @@ drawFiveCircles(petalTurtle,25,-220,0)
 
 drawCenterCircles(centerTurtle,-220,-15)
 
-stampTurtle.up()
-stampTurtle.goto(-222,0)
-stampTurtle.down()
-stampTurtle.stamp()
+drawBee(stampTurtle, -222, 0)
 
 win.exitonclick()
