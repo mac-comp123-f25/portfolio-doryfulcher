@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 """
 Examples of while and for loops for the Iteration activity
 
@@ -109,3 +110,11 @@ if __name__ == '__main__':
     print(next_word('Bananas and apples'))
     print("nextWord('Frederick!') does:")
     print(next_word('Frederick!'))
+=======
+def print_every_fifth(x):
+  while x >= 0:  # x is the loop variable
+    print(x)
+    x = x - 2
+  # when indentation stops, while loop is over
+  print("Done!")
+>>>>>>> Stashed changes
