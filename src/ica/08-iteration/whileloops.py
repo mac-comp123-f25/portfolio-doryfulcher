@@ -53,6 +53,8 @@ def sum_to_n(top_num):
     while curr_val <= top_num:
         total = total + curr_val
         curr_val = curr_val + 3
+        print(curr_val)
+        print(total)
 
     return total
 
