@@ -46,8 +46,12 @@ def get_low_wage_states(table):
     wage of $7.25. It returns a new sunTable, a list, containing the row
     dictionaries
     """
-    # TODO: finish this function
-    pass
+    low_states=[]
+    for row in table:
+        if row['StateMin']== 7.25:
+            low_states.append(row)
+    return low_states
+
 
 
 def get_expensive_states(table):
