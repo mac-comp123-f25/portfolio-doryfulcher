@@ -73,8 +73,7 @@ def annual_wage(hourly_wage):
     * Each worker works 40 hours per week (no part-time work!)
     * Each worker works 52 weeks per year (no vacation time!)
     """
-    # TODO: finish this function
-    pass
+    return hourly_wage * 4160
 
 
 def get_gap_states(table):
@@ -87,8 +86,12 @@ def get_gap_states(table):
     earned at minimum wage.  Find the states where the annual salary at
     minimum wage is less than the living wage.
     """
-    # TODO: finish this function
-    pass
+    gap_states=[]
+    for row in table:
+        number1=row['AnnualLivingWage']
+        number2=annual_wage(row['HourlyMinimumWage'])
+        if number1 > number2:
+            gap_states.append(row['State'])
 
 
 # Visualizing data
