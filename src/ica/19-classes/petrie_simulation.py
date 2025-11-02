@@ -49,8 +49,8 @@ def print_employee_list(lst):
     Given a list of employees, this method will print the details of each employee
     by using the print() method
     """
-    # TODO: Implement this function then remove this line
-    pass
+    for employee in lst:
+        print(employee)
 
 
 def create_employees(total_num):
