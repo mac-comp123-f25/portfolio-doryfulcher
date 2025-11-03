@@ -58,8 +58,16 @@ def create_employees(total_num):
     Takes in the number of employees to make, builds and returns a list that contains
     that many employees. It ensures that ~80% are men and the rest women.
     """
-    # TODO: Implement this function then remove this line
-    pass
+    male_num= round(total_num * 0.8)
+    female_num= total_num -male_num
+    employees = []
+    for i in range(male_num):
+        person = Employee("Male", False)
+        employees.append(person)
+    for i in range(female_num):
+        person = Employee("Female", False)
+        employees.append(person)
+    return employees
 
 
 def create_commenters(lst):
@@ -67,8 +75,10 @@ def create_commenters(lst):
     Given a list of employees, make 20% of each gender be sexist employees. This
     method should not return anything.
     """
-    # TODO: Implement this function then remove this line
-    pass
+    for employee in lst:
+        num = random.random()
+        if num < 0.20:
+            employee.set_commenter_status(True)
 
 
 def generate_comments(lst):
@@ -77,8 +87,23 @@ def generate_comments(lst):
     another employee of the opposite gender, chosen randomly. This method should
     not return anything
     """
-    # TODO: Implement this function then remove this line
-    pass
+    male_list=[]
+    female_list=[]
+    for employee in lst:
+        if employee.gender == "Male":
+            male_list.append(employee)
+        if employee.gender == "Female":
+            female_list.append(employee)
+    for employee in male_list:
+        if employee.will_comment == True:
+            worker= random.choice(female_list)
+            worker.receive_sexist_comment()
+    for employee in female_list:
+        if employee.will_comment ==True:
+            worker = random.choice(male_list)
+            worker.receive_sexist_comment()
+
+
 
 
 def average_comments(lst):
@@ -86,8 +111,18 @@ def average_comments(lst):
     Returns a tuple that represents the average amount of comments received for men and women
     respectively. Return statement will be in the form (<avg_for_men>, <avg_for_women>)
     """
-    # TODO: Implement this function then remove this line
-    pass
+    male_comments=[]
+    female_comments=[]
+    for employee in lst:
+        if employee.gender == "Male":
+            male_comments.append(employee.comments_received)
+        if employee.gender == "Female":
+            female_comments.append(employee.comments_received)
+    male_avg=sum(male_comments)/len(male_comments)
+    female_avg=sum(female_comments)/len(female_comments)
+    return (male_avg, female_avg)
+
+
 
 
 def main():
@@ -95,8 +130,8 @@ def main():
     Print out information about the average comments
     received by men and women after a simulation has been run
     """
-    num_employees_to_generate = 100
-    num_comment_rounds = 50
+    num_employees_to_generate = 1000
+    num_comment_rounds = 260
 
     employee_list = create_employees(num_employees_to_generate)
     create_commenters(employee_list)
@@ -132,4 +167,4 @@ if __name__ == "__main__":
     print(average_comments(employees))
 
     "<----- Run the simulation ----->"
-    # main()  # <-- KEEP THIS, Uncomment it after implementing all the functions
+    main()  # <-- KEEP THIS, Uncomment it after implementing all the functions
