@@ -98,7 +98,7 @@ def draw_moon(radius=40):
 """Call to draw the moon"""
 draw_moon(radius=40)
 
-"""Calls to draw the skyscrapers"""
+"""Calls to draw the skyscrapers, these can take user inupt, the user can decide how tall they want the buildings or what color they would like. """
 draw_shaped_skyscraper(-350, -450)
 draw_skyscraper(-250, -450, floors=20, width=80, color="silver")
 draw_skyscraper(-200, -450, floors=25, width=60, color="dark slate gray")
