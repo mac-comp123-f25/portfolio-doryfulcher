@@ -12,7 +12,7 @@ class BasicGui:
         button2["command"]=self.change_text
         button3=tk.Button(self.mainWin, text="Goodbye")
         button3.grid(row=3, column=1)
-        button3["command"]=self.change_goodbye
+        button3["co\mmand"]=self.change_goodbye
         self.label1=tk.Label(self.mainWin, text="Welcome")
         self.label1.grid(row=2,column=2)
 
