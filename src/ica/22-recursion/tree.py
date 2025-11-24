@@ -40,7 +40,7 @@ def draw_tree(branch_len, turt):
         turt.right(20)
         turt.backward(branch_len)
 
-
+ 
 if __name__ == '__main__':
     root = tk.Tk()
     root.withdraw()
